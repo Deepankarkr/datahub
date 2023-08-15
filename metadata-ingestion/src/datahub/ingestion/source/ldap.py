@@ -310,6 +310,7 @@ class LDAPSource(StatefulIngestionSourceBase):
         Handle a DN and attributes by adding manager info and constructing a
         work unit based on the information.
         """
+        manager_ldap = None
         make_manager_urn = None
         if self.config.user_attrs_map["managerUrn"] in attrs:
             try:
